@@ -44,6 +44,7 @@ export default {
     height: 40px;
     margin: 0 auto;
     background: #242424;
+    border-bottom: 3px solid #242424;
   }
   .nav-ul{
     height:100%;
@@ -73,6 +74,6 @@ export default {
     justify-content: center;
   }
   .category_active{
-    background: blue
+    background: #CD0000
   }
 </style>
