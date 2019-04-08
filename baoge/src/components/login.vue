@@ -31,8 +31,6 @@ export default {
 
 <style>
   .login-con{
-    background: url('../assets/login.jpg') no-repeat;
-    height: 900px;
   }
   input{
     width: 480px;

@@ -3,9 +3,12 @@
     <head-top signin-up='home'></head-top>
     <div class='total'>
       <div class='carousel-message'>
-        <ul>
-          <li v-for="carouselData in carouselList" :key="carouselData.id" ><img :src="carouselData.imgLinks"></li>
-        </ul>
+        <swiper :options="swiperOption" class="swiper-wrap"  ref="mySwiper" v-if="carouselList.length!=0">
+          <swiper-slide v-for="carouselData in carouselList" :key="carouselData.id" ><img :src="carouselData.imgLinks"></swiper-slide>
+          <div class="swiper-pagination"  v-for="(item,index) in carouselList" :key="index" slot="pagination" ></div>
+          <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+          <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+        </swiper>
       </div>
     </div>
   </div>
@@ -14,15 +17,34 @@
 <script>
 import headTop from '../../common/header/head'
 import { getCarouselList } from '../../http/carousel'
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'home',
   data () {
     return {
-      carouselList: []
+      carouselList: [],
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        autoplay: {
+          delay: 1500,
+          stopOnLastSlide: false,
+          /* 触摸滑动后是否继续轮播 */
+          disableOnInteraction: false
+        },
+        speed: 2000,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        effect: 'fade'
+      }
     }
   },
   components: {
-    headTop
+    headTop,
+    swiper,
+    swiperSlide
   },
   mounted () {
     this.fetchData()
@@ -48,32 +70,13 @@ export default {
     padding: 0;
   }
   .content{
-    width: 100%;
     height: 100%
   }
   .total{
     height: 100%;
-    margin: 0 auto;
   }
-  .carousel-message{
-    height: 445px;
-    background: yellow;
+  .swiper-pagination-bullet{
+    background-color: white
   }
-  .carousel-message ul{
-    width: 100%;
-    height: 445px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  .carousel-message ul li{
-    width: 100%;
-    height: 100%;
-    list-style: none;
-    float: right;
-  }
-  .carousel-message ul li img{
-    width: 100%;
-    height: 100%;
-  }
+
 </style>

@@ -29,7 +29,7 @@ export default {
 <style>
   .head_top{
     width: 100%;
-    height: 143px;
+    height: 146px;
     text-align: center;
   }
   .head-logo{
