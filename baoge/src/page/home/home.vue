@@ -79,5 +79,9 @@ export default {
   .swiper-pagination-bullet{
     background-color: white
   }
-
+  .content{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto
+  }
 </style>
