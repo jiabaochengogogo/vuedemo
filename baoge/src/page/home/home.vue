@@ -10,7 +10,19 @@
           <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
         </swiper>
       </div>
-      <div class="content"></div>
+    </div>
+    <div class="content-body">
+      <div class="content-body-left">
+        <div class="hot-recommend-nav">
+          <div class="hot-nav-left">
+            <img>
+            <a style="float:left">热门推荐</a>
+            <div class="tab" style="float:left">
+              <a :href="url" v-for="item in hotData" :key="item.id"></a><span>|</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -29,6 +41,7 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         },
+        paginationClickable: true,
         autoplay: {
           delay: 1500,
           stopOnLastSlide: false,
@@ -73,15 +86,27 @@ export default {
   .content{
     height: 100%
   }
-  .total{
-    height: 100%;
-  }
   .swiper-pagination-bullet{
     background-color: white
   }
-  .content{
+  .swiper-slide{
+    height: 445px;
+  }
+  .content-body{
+    width: 60%;
+    height: 110px;
+    /* text-align: center; */
+    padding: 20px 20px 40px;
+    margin: 0 auto;
+    border-left: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;;
+  }
+  .content-body-left{
     width: 80%;
-    text-align: center;
-    margin: 0 auto
+  }
+  .hot-recommend-nav{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
   }
 </style>
