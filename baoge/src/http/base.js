@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // axios配置
 axios.defaults.timeout = 10000
-axios.defaults.baseURL = '/open'
+axios.defaults.baseURL = ''
 
 const fetch = (url, params = {}) => {
   console.log(url)

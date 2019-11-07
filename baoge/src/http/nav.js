@@ -5,7 +5,7 @@ import * as http from './base'
  */
 
 const getNavList = params => {
-  return http.fetch('boss/navigation/get', params)
+  return http.fetch('net/navigation/get', params)
 }
 
 export { getNavList }

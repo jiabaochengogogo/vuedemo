@@ -5,7 +5,7 @@ import * as http from './base'
  */
 
 const getCarouselList = params => {
-  return http.fetch('boss/carousel-message/findAll', params)
+  return http.fetch('net/carousel-message/findAll', params)
 }
 
 export { getCarouselList }

@@ -1,9 +1,10 @@
 <template>
     <header id="head_top" class="head_top">
         <div class='head-logo'>
-          <div name="logo" class='logo' ><router-link :to="'/'" class="tohome">聆 听</router-link></div>
+          <div name="logo" class='logo' ><router-link :to="'/'" class="tohome">tree hole music</router-link></div>
             <slot name="search"></slot>
             <div name="user" class="user">
+            <!-- router-link默认被渲染为a标签 -->
             <router-link :to="'/login'" class="login_data">{{ msg }}</router-link>
             <router-link :to="''" class="register_data">{{ register }}</router-link>
           </div>
@@ -48,7 +49,7 @@ export default {
   .tohome{
     width: 100%;
     height: 100%;
-    font-size: 80px;
+    font-size: 50px;
     display: block;
     line-height: 100px;
     font-style: italic;
