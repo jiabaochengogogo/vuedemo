@@ -15,12 +15,22 @@
       <div class="content-body-left">
         <div class="hot-recommend-nav">
           <div class="hot-nav-left">
-            <img>
-            <a style="float:left">热门推荐</a>
-            <div class="tab" style="float:left">
-              <a :href="url" v-for="item in hotData" :key="item.id"></a><span>|</span>
+            <a style="float:left; font-size: 22px">热门推荐</a>
+            <div class="tab">
+              <!-- <a :href="url" v-for="item in hotData" :key="item.id"></a><span>|</span> -->
+              <a :href="url">华语</a><span>|</span>
+              <a :href="url">流行</a><span>|</span>
+              <a :href="url">摇滚</a><span>|</span>
+              <a :href="url">民谣</a><span>|</span>
+              <a :href="url">电子</a><span>|</span>
             </div>
           </div>
+          <div class="hot-nav-right">
+            <a>更多</a>
+          </div>
+        </div>
+        <div class="music">
+          <div></div>
         </div>
       </div>
     </div>
@@ -84,7 +94,7 @@ export default {
     padding: 0;
   }
   .content{
-    height: 100%
+    height: 100%;
   }
   .swiper-pagination-bullet{
     background-color: white
@@ -94,19 +104,50 @@ export default {
   }
   .content-body{
     width: 60%;
-    height: 110px;
+    /*height: 45px;*/
     /* text-align: center; */
     padding: 20px 20px 40px;
     margin: 0 auto;
     border-left: 1px solid #EDEDED;
     border-right: 1px solid #EDEDED;;
+    background-color: #FFFFFF;
   }
   .content-body-left{
+    width: 75%;
+  }
+  .hot-nav-left{
     width: 80%;
+    float: left;
+  }
+  .hot-nav-right{
+    width: 18%;
+    float: left;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 10px;
   }
   .hot-recommend-nav{
     width: 100%;
     height: 40px;
     line-height: 40px;
+    border-bottom: 2px #C10D0C solid;
+  }
+
+  .hot-nav-left a{
+    width: 20%;
+  }
+  .tab{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: left;
+    width: 78%;
+    float: right;
+    font-size: 12.5Px;
+    color: #666;
+  }
+  .tab a{
+    cursor: pointer;
+  }
+  .tab span{
+    padding: 0 10px;
   }
 </style>

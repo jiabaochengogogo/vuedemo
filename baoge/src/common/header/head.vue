@@ -1,7 +1,7 @@
 <template>
     <header id="head_top" class="head_top">
         <div class='head-logo'>
-          <div name="logo" class='logo' ><router-link :to="'/'" class="tohome">tree hole music</router-link></div>
+          <div name="logo" class='logo' ><router-link :to="'/'" class="tohome">{{ logoData }}</router-link></div>
             <slot name="search"></slot>
             <div name="user" class="user">
             <!-- router-link默认被渲染为a标签 -->
@@ -17,6 +17,7 @@ import navTop from '../../page/nav/nav'
 export default {
   data () {
     return {
+      logoData: 'Tree Hole Music',
       msg: '登录',
       register: '注册'
     }
